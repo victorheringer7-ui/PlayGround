@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#171411" />
+  <title>Sertão — The Last Train</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <canvas id="game" aria-label="Sertão game canvas"></canvas>
+    <div class="film-grain"></div>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">S</span><span>SERTÃO <small>1897 · MINAS GERAIS</small></span></div>
+      <div class="chapter"><span class="live-dot"></span> <span id="chapter-label">CHAPTER I</span> <i>/</i> <span id="chapter-name">THE LAST TRAIN</span></div>
+      <button id="pause-button" class="icon-button" aria-label="Pause game"><span>Ⅱ</span></button>
+    </header>
+    <section class="mission-card" id="mission-card">
+      <div class="eyebrow"><span class="sun-icon">✳</span> CAMPAIGN <span class="contract-id" id="contract-id">01 / 05</span></div>
+      <h2 id="mission-title">THE LAST<br><em>TRAIN</em></h2>
+      <p id="mission-copy">Retrieve the stolen <b>Coronel’s seal</b> before the bandits reach the station.</p>
+      <div class="objective"><span class="objective-icon">◇</span><span id="objective-label">Find the seal <small id="relic-count">0 / 3 clues</small></span><span class="objective-check" id="objective-check">○</span></div>
+      <div class="objective"><span class="objective-icon">↗</span><span id="goal-label">Reach the station <small>Follow the trail east</small></span><span class="objective-check" id="goal-check">○</span></div>
+      <div class="card-rule"></div>
+      <div class="reward-line"><span>CHAPTER</span><b id="reward-value">I</b></div>
+    </section>
+    <section class="player-hud" id="player-hud">
+      <div class="portrait"><span>✦</span></div>
+      <div class="vitals"><div class="hud-label">VITALITY <span id="health-value">100</span></div><div class="health-track"><i id="health-bar"></i></div><div class="ammo-row"><span class="ammo-icon">✣</span><span id="ammo-value">6</span><small> / <span id="reserve-value">24</span></small><span class="ammo-hint">[R] RELOAD</span></div></div>
+    </section>
+    <div class="location-tag" id="location-tag"><span class="location-pin">⌖</span><span>CAATINGA<br><small>THE DRY COUNTRY</small></span></div>
+    <div class="toast" id="toast"></div>
+    <div class="crosshair" id="crosshair"><i></i><b></b></div>
+    <div class="start-screen" id="start-screen">
+      <div class="start-backdrop"></div>
+      <div class="start-content">
+        <div class="edition"><span></span> A TALE FROM THE SERTÃO <span></span></div>
+        <h1>SERT<span>Ã</span>O</h1>
+        <div class="subtitle">THE LAST TRAIN</div>
+        <p class="intro-copy">The sun takes everything.<br>Some things, you take back.</p>
+        <button id="start-button" class="start-button"><span>BEGIN YOUR RIDE</span><b>↗</b></button>
+        <div class="controls-note"><span>W A S D</span> RIDE <i>·</i> <span>MOUSE</span> AIM <i>·</i> <span>CLICK</span> FIRE</div>
+        <div class="continue-note">PRESS ENTER TO RIDE</div>
+      </div>
+      <div class="start-footer"><span>AN ORIGINAL FRONTIER TALE</span><span>MINAS GERAIS · BRAZIL · 1897</span></div>
+    </div>
+    <div class="end-screen hidden" id="campaign-screen"><div class="end-panel"><div class="eyebrow" id="campaign-kicker">CHAPTER II · A DROUGHT’S DEBT</div><h2 id="campaign-title">THE ROAD<br><em>GOES ON</em></h2><p id="campaign-copy"></p><button id="continue-button" class="start-button"><span>CONTINUE THE CAMPAIGN</span><b>↗</b></button></div></div>
+    <div class="end-screen hidden" id="end-screen"><div class="end-panel"><div class="eyebrow">A FRONTIER TALE</div><h2 id="end-title">THE TRAIN<br><em>IS WAITING</em></h2><p id="end-copy"></p><button id="restart-button" class="start-button"><span>RIDE AGAIN</span><b>↗</b></button></div></div>
+    <div class="bottom-hint" id="bottom-hint"><span>WASD</span> MOVE <i>·</i> <span>CLICK</span> SHOOT <i>·</i> <span>R</span> RELOAD <i>·</i> <span>SHIFT</span> RUN</div>
+  </main>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
